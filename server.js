@@ -1,8 +1,8 @@
 var http = require('http');
 var fs = require('fs');
-var getAPI = require('./API/getAPI.js');
-var postAPI = require('./API/postAPI.js');
-var putAPI = require('./API/putAPI.js');
+var getAPI = require('./api/getAPI.js');
+var postAPI = require('./api/postAPI.js');
+var putAPI = require('./api/putAPI.js');
 
 var server_port = process.env.PORT || 8888;
 
