@@ -1,4 +1,6 @@
 var user = require('./../models/user.js');
+var order = require('./../models/order.js');
+var site = require('./../models/site.js');
 
 exports.put = function(request, response) {
 	switch(getModel(request.url))
@@ -6,6 +8,16 @@ exports.put = function(request, response) {
 		case "user":
 		{
 			user.put(request, response);
+			break;
+		}
+		case "order":
+		{
+			order.put(request, response);
+			break;
+		}
+		case "site":
+		{
+			site.put(request, response);
 			break;
 		}
 		default:

@@ -1,4 +1,6 @@
 var user = require('./../models/user.js');
+var order = require('./../models/order.js');
+var site = require('./../models/site.js');
 
 exports.post = function(request, response) {
 	switch(getModel(request.url))
@@ -6,6 +8,16 @@ exports.post = function(request, response) {
 		case "user":
 		{
 			user.post(request, response);
+			break;
+		}
+		case "order":
+		{
+			order.post(request, response);
+			break;
+		}
+		case "site":
+		{
+			site.post(request, response);
 			break;
 		}
 		default:
