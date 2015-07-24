@@ -1,14 +1,7 @@
-exports.get = function(request, response) {
-	response.writeHead(200, {'Content-Type': 'text/html'});
-	response.end();
-};
+var addressModel = require('../models/address.js');
 
-exports.put = function(request, response) {
-	response.writeHead(200, {'Content-Type': 'text/html'});
-	response.end();
-};
-
-exports.post = function(request, response) {
-	response.writeHead(200, {'Content-Type': 'text/html'});
-	response.end();
+exports.Site =function(){
+	this.Name= null;
+	this.SiteId= null;
+	this.Address= new addressModel.Address();	
 };
