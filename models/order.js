@@ -1,14 +1,8 @@
-exports.get = function(request, response) {
-	response.writeHead(200, {'Content-Type': 'text/html'});
-	response.end();
-};
+var siteModel = require('../models/site.js');
 
-exports.put = function(request, response) {
-	response.writeHead(200, {'Content-Type': 'text/html'});
-	response.end();
-};
-
-exports.post = function(request, response) {
-	response.writeHead(200, {'Content-Type': 'text/html'});
-	response.end();
-};
+exports.Order=function(){
+	this._id= null;
+	this.MenuItems= null;
+	this.distance =null;
+	this.site= new siteModel.Site();
+	};

@@ -3,11 +3,14 @@ var SiteModel = require('../models/site.js');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/FoodMe');
 
+<<<<<<< HEAD
 exports.get = function(request, response) {
 	response.writeHead(200, {'Content-Type': 'text/html'});
 	response.end();
 };
 
+=======
+>>>>>>> 83c71d8e3bb2767f3b6e58f2cba3a133788d90cd
 exports.search = function(name) {
 	var site1=new SiteModel.Site();
 	site1.Name=name;
@@ -29,6 +32,7 @@ exports.search = function(name) {
 	//return dbContex.Select('site',{query: query});
 };
 
+<<<<<<< HEAD
 exports.getSites = function(callback) {
 	return dbContext.loadAll(dbContext.ObjectType.SITES, function(err, data) {
 		if (!err) {
@@ -38,3 +42,17 @@ exports.getSites = function(callback) {
 		}		
 	});	
 }
+=======
+exports.getbyid=function(id){
+	
+	var site1= new siteModel.Site();
+	site1.Name="John Name";
+	site1.SiteId="1";
+	site1.Address.Address1='363 Bridgestone Ln';
+	site1.Address.City='Atlanta';
+	site1.Address.State='GA';
+	site1.Address.Zip='30134';
+	
+	return site1;
+};
+>>>>>>> 83c71d8e3bb2767f3b6e58f2cba3a133788d90cd
