@@ -1,11 +1,11 @@
-exports.Select=function(objectType,options){
+exports.select = function(objectType,options) {
 	return{};
 }
 
-exports.Insert=function(objectType,model,options){
+exports.insert = function(objectType,model,options) {
 	return{};
 }
 
-exports.get=function(objectType,id){
+exports.get = function(objectType,id) {
 	return{};
 }
