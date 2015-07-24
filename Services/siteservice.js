@@ -2,8 +2,6 @@ var dbContex = require('../data/DBContext.js');
 var siteModel = require('../models/site.js');
 
 exports.get = function(request, response) {
-	request.
-	
 	response.writeHead(200, {'Content-Type': 'text/html'});
 	response.end();
 };
@@ -18,7 +16,7 @@ exports.post = function(request, response) {
 	response.end();
 };
 */
-exports.serch = function(name) {
+exports.search = function(name) {
 	var site1=new siteModel.Site();
 	site1.Name=name;
 	site1.SiteId="1";
