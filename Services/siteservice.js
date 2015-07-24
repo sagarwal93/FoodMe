@@ -1,21 +1,6 @@
 var dbContex = require('../data/DBContext.js');
 var siteModel = require('../models/site.js');
 
-exports.get = function(request, response) {
-	response.writeHead(200, {'Content-Type': 'text/html'});
-	response.end();
-};
-/*
-exports.put = function(request, response) {
-	response.writeHead(200, {'Content-Type': 'text/html'});
-	response.end();
-};
-
-exports.post = function(request, response) {
-	response.writeHead(200, {'Content-Type': 'text/html'});
-	response.end();
-};
-*/
 exports.search = function(name) {
 	var site1=new siteModel.Site();
 	site1.Name=name;
@@ -35,4 +20,17 @@ exports.search = function(name) {
 	
 	return [site1,site2];
 	//return dbContex.Select('site',{query: query});
+};
+
+exports.getbyid=function(id){
+	
+	var site1= new siteModel.Site();
+	site1.Name="John Name";
+	site1.SiteId="1";
+	site1.Address.Address1='363 Bridgestone Ln';
+	site1.Address.City='Atlanta';
+	site1.Address.State='GA';
+	site1.Address.Zip='30134';
+	
+	return site1;
 };
