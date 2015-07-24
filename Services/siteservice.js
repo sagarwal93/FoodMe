@@ -1,7 +1,5 @@
 var dbContext = require('../data/DBContext.js');
 var SiteModel = require('../models/site.js');
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/FoodMe');
 
 exports.get = function(request, response) {
 	response.writeHead(200, {'Content-Type': 'text/html'});

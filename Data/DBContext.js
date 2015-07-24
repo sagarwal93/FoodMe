@@ -1,4 +1,6 @@
 var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/FoodMe');
+
 var SiteModel = require('../models/site.js');
 
 function validateObjectType(objectType) {
