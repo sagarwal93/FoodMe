@@ -1,7 +1,11 @@
 var addressModel = require('../models/address.js');
 
-exports.Site =function(){
-	this.Name= null;
-	this.SiteId= null;
-	this.Address= new addressModel.Address();	
-};
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+var siteSchema = new Schema({
+	menu_id: String,
+	name: String
+});
+
+module.exports = mongoose.model('sites', siteSchema);

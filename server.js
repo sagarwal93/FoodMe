@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var sites = require('./routes/sites')
+var siteRoute = require('./routes/sites');
 
 var app = express();
 
@@ -23,7 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/sites', sites);
+app.use('/api/sites', siteRoute);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -58,62 +58,3 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
-
-
-/*var http = require('http');
-var fs = require('fs');
-var getAPI = require('./api/getAPI.js');
-var postAPI = require('./api/postAPI.js');
-var putAPI = require('./api/putAPI.js');
-
-var server_port = process.env.PORT || 8888;
-
-http.createServer(
-	function(request, response) {
-		if (getResourceType(request.url) === "api") {
-			apiCalls(request, response);
-		}
-		else {
-			resourceCalls(request, response);
-		}
-	}
-).listen(server_port, '0.0.0.0');
-
-function resourceCalls(request, response) {
-	var index = fs.readFileSync('index.html');
-	response.writeHead(200, {'Content-Type': 'text/html'});
-	response.end(index);
-}
-
-function apiCalls(request, response) {
-	switch(request.method)
-	{
-		case "GET":
-		{
-			getAPI.get(request, response);
-			break;
-		}
-		case "POST":
-		{
-			postAPI.post(request, response);
-			break;
-		}
-		case "PUT":
-		{
-			putAPI.put(request, response);
-			break;
-		}
-		default:
-		{
-			response.writeHead(400, {'Content-Type': 'text/html'});
-			response.end("Not Found");
-		}
-	}
-}
-
-function getResourceType(requestUrl)
-{
-	return requestUrl.substr(1).split('/')[0];
-}
-
-*/
